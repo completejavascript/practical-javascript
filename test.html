@@ -2,29 +2,26 @@
 <html>
 <head>
   <script>
-    // JavaScript code here...
-    while (true) {
-	var number = Number(prompt('Enter a positive number:'));
-		if (!isNaN(number) && number > 0) break;
+    function f1(number){
+		if(number == 0 || number == 1) return 1;
+		return f1(number - 1) + f1(number - 2);
 	}
 
-	if (number < 2) {
-		alert("It's not a prime number.");
-	}
-	else if(number == 2) {
-		alert("It's a prime number.");
-	}
-	else {
-		var check = true;
-		for(var i = 2; i < number; i++) {
-			if (number % i == 0) {
-				check = false;
-				break;
-			}
+	function f2(number){
+		if(number == 0 || number == 1) return 1;
+
+		var a2 = 1, a1 = 1, a;
+		for(i = 2; i <= number; i++){
+	 		a = a1 + a2;
+	 		a2 = a1;
+	 		a1 = a;
 		}
-		if(check) alert("It's a prime number.");
-		else alert("It's not a prime number.");
+
+		return a;
 	}
+
+	console.log(f1(6));
+	console.log(f2(6));
 
   </script>
 </head>
