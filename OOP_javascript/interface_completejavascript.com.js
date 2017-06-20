@@ -7,49 +7,49 @@ function ArraySeq(_array){
     return end < start;
 	}
 
-	this.get = function(idx){
-		if(idx >= start && idx <= end)
-			return array[idx];
-		else 
-			return "Index invalid!";
+  this.get = function(idx){
+    if(idx >= start && idx <= end)
+      return array[idx];
+    else
+      return "Index invalid!";
 	}
 
-	this.indexOfTail = function(){
-		return end;
-	}
+  this.indexOfTail = function(){
+    return end;
+  }
 }
 
 function RangeSeq(_st, _ed){
-	var base = _st;
-	var start = 0;
-	var end = _ed - _st;
+  var base = _st;
+  var start = 0;
+  var end = _ed - _st;
 
-	this.isEmpty = function(){
-		return end < start;
-	}
+  this.isEmpty = function(){
+    return end < start;
+  }
 
-	this.get = function(idx){
-		if(idx >= start && idx <= end)
-			return idx + base;
-		else 
-			return "Index invalid!";
-	}
+  this.get = function(idx){
+    if(idx >= start && idx <= end)
+      return idx + base;
+    else
+      return "Index invalid!";
+  }
 
-	this.indexOfTail = function(){
-		return end;
-	}
+  this.indexOfTail = function(){
+    return end;
+  }
 }
 
 function logFive(seq){
   if(!seq.isEmpty()){
-  	var cnt = 0;
-  	var idx = 0;
-  	while(true){
+    var cnt = 0;
+    var idx = 0;
+    while(true){
       console.log(seq.get(idx));
       cnt++;
       if(cnt == 5 || idx == seq.indexOfTail()) break;
       idx++;
-  	}
+    }
   }
 }
 
