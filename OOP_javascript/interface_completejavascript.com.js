@@ -53,5 +53,6 @@ function logFive(seq){
   }
 }
 
+// test
 logFive(new ArraySeq([1, 2]));
 logFive(new RangeSeq(100, 1000));
