@@ -5,14 +5,14 @@ function ArraySeq(_array){
 
   this.isEmpty = function(){
     return end < start;
-	}
+  }
 
   this.get = function(idx){
     if(idx >= start && idx <= end)
       return array[idx];
     else
       return "Index invalid!";
-	}
+  }
 
   this.indexOfTail = function(){
     return end;
