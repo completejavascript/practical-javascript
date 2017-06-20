@@ -1,10 +1,10 @@
 function ArraySeq(_array){
-	var array = _array.slice();
-	var start = 0;
-	var end   = array.length - 1;
+  var array = _array.slice();
+  var start = 0;
+  var end   = array.length - 1;
 
-	this.isEmpty = function(){
-		return end < start;
+  this.isEmpty = function(){
+    return end < start;
 	}
 
 	this.get = function(idx){
@@ -53,5 +53,7 @@ function logFive(seq){
   }
 }
 
+// test
 logFive(new ArraySeq([1, 2]));
+console.log("---------------");
 logFive(new RangeSeq(100, 1000));
