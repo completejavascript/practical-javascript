@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>
-    function f1(number){
-		if(number == 0 || number == 1) return 1;
-		return f1(number - 1) + f1(number - 2);
-	}
-
-	function f2(number){
-		if(number == 0 || number == 1) return 1;
-
-		var a2 = 1, a1 = 1, a;
-		for(i = 2; i <= number; i++){
-	 		a = a1 + a2;
-	 		a2 = a1;
-	 		a1 = a;
-		}
-
-		return a;
-	}
-
-	console.log(f1(6));
-	console.log(f2(6));
-
-  </script>
+<title></title>
+<script src="./practice/Electronic_life_completejavascript.com.js">
+/*
+var test = {
+  prop: 10,
+  addPropTo: function(array) {
+    return array.map(function(elt) {
+      return this.prop + elt;
+    }.bind(this));
+  }
+};
+console.log(test.addPropTo([5]));
+*/
+</script>
 </head>
-<body></body>
+<body>
+
+</body>
 </html>
