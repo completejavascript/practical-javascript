@@ -156,18 +156,19 @@ specialForms["fun"] = function(args, env) {
 specialForms["set"] = function(args, env) {
   if (args.length != 2 || args[0].type != "word")
     throw new SyntaxError("Bad use of define");
+
+  var name = args[0].name;
+  var val = evaluate(args[1], env);
+	
   var proto = Object.getPrototypeOf(env);
-  var check = false;
   while(true) {
 	if(proto == null) {
-		if (!check) throw new ReferenceError('ReferenceError hehe');
-		else break;
+		throw new ReferenceError('ReferenceError hehe');
 	} 
 		
-	var value = evaluate(args[1], env);
-	if(args[0].name in proto) {
-	  env[args[0].name] = value;
-	  check = true;
+	if(name in proto) {
+	  proto[name] = val;
+	  break;
 	}
 	
 	proto = Object.getPrototypeOf(proto);
